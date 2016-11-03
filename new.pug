@@ -1,0 +1,55 @@
+//output:index.html
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Andy's Lawn Services
+    meta(name="description", content="")
+    meta(name="author", content="Andy Radloff")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.min.css")
+    //link(rel="icon", type="image/png", href="images/favicon.png")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+
+  body
+
+    mixin nav-content()
+      ul
+        //li: a(href="#about") About
+        li: a(href="#services") Services
+        li: a(href="#quote") Quote
+        //li: a(href="#testimonials") Testimonials
+        li: a(href="#contact") Contact
+
+    .mobile-nav
+      +nav-content()
+
+    header
+      .title-nav
+        h1.site-title
+          a(id="title") Andy's Lawn Services
+
+      .mobile-nav-toggle: span
+
+      nav.site-nav
+        +nav-content()
+
+    section.video-box
+      .logo
+      .scroll-icon
+
+    section(id="services").services.content
+      h1.section-title Our Services
+      .lawn-mowing
+      .aeration
+      .over-seeding
+      .snow-removal
+
+    section(id="quote").quote.content
+      h1.section-title Request a Quote
+    section(id="contact").contact.content
+      h1.section-title Contact Us
+
+  script(src="scripts/jquery.min.js")
+  script(src="scripts/functions.js")
